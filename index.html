@@ -29,31 +29,59 @@ body{
   line-height:1.7;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO XUÂN ĐỘNG – HSG ===== */
 .hero{
+  position:relative;
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
+    linear-gradient(120deg,
+      #b80000,
+      #e60026,
+      #ffcc33,
+      #ffb7c5);
+  background-size:400% 400%;
+  animation:gradientMove 12s ease infinite;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
+  overflow:hidden;
+}
+
+/* Gradient animation */
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Overlay ánh sáng */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.25), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(255,215,120,.25), transparent 50%);
+  pointer-events:none;
 }
 
 .hero h1{
-  font-size:42px;
+  font-size:44px;
   color:#fff;
-  letter-spacing:1px;
+  letter-spacing:1.5px;
+  text-shadow:0 4px 18px rgba(0,0,0,.35);
 }
 
 .hero p{
-  margin-top:18px;
+  margin-top:20px;
   font-size:18px;
-  color:#ffe9b3;
+  color:#fffbe6;
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+  text-shadow:0 2px 10px rgba(0,0,0,.25);
 }
 
 @media(max-width:768px){
@@ -164,9 +192,13 @@ footer{
     <div class="card">
   <h3>📱 Công nghệ trong mua sắm & giao thông</h3>
   <p>
-    Các nền tảng mua sắm trực tuyến, thanh toán không tiền mặt
-    giúp tiết kiệm thời gian và thuận tiện hơn trong dịp Tết.
-    Ứng dụng bản đồ số hỗ trợ di chuyển an toàn, hạn chế ùn tắc.
+    Ứng dụng công nghệ số giúp hoạt động mua sắm Tết trở nên
+    nhanh chóng, an toàn thông qua thanh toán không tiền mặt
+    và sàn thương mại điện tử.
+    <br><br>
+    Bên cạnh đó, bản đồ số và ứng dụng giao thông thông minh
+    hỗ trợ người dân di chuyển thuận lợi, giảm ùn tắc
+    và nâng cao ý thức tham gia giao thông trong dịp Tết.
   </p>
 
   <a class="btn" 
@@ -176,26 +208,43 @@ footer{
   </a>
 </div>
 
-      <div class="card">
-        <h3>🧧 Giữ gìn văn hóa Tết bằng công nghệ</h3>
-        <p>
-          Hình ảnh, video, lời chúc Tết và phong tục truyền thống
-          được lưu trữ dưới dạng số hóa, góp phần bảo tồn và lan tỏa
-          giá trị văn hóa dân tộc.
-        </p>
-      </div>
+<div class="card">
+  <h3>🧧 Giữ gìn văn hóa Tết bằng công nghệ</h3>
+  <p>
+    Văn hóa Tết truyền thống được số hóa thông qua website,
+    hình ảnh, nội dung giới thiệu và tư liệu số.
+    <br><br>
+    Việc ứng dụng công nghệ giúp lưu giữ phong tục, giá trị
+    tinh thần và bản sắc dân tộc, đồng thời lan tỏa
+    nét đẹp Tết Việt đến cộng đồng trong thời đại số.
+  </p>
 
-      <div class="card">
-        <h3>✨ Góc Điều Ước Số Đầu Năm</h3>
-        <p>
-          Học sinh lớp 10A7 gửi điều ước, ước mơ và lời chúc Tết
-          thông qua Google Form, thể hiện rõ yếu tố tương tác
-          và chuyển đổi số trong giáo dục.
-        </p>
-        <a class="btn" href="https://forms.gle/QqVibsXuuZuHQhxh6" target="_blank">
-          🎉 GỬI ĐIỀU ƯỚC
-        </a>
-      </div>
+  <a class="btn"
+     href="https://huyg15235-lgtm.github.io/vanhoatet/"
+     target="_blank">
+     🌸 KHÁM PHÁ VĂN HÓA TẾT
+  </a>
+</div>
+
+<div class="card">
+  <h3>✨ Góc Điều Ước Số Đầu Năm</h3>
+  <p>
+    Góc Điều Ước Số là không gian để học sinh gửi gắm
+    ước mơ, mong muốn và lời chúc đầu năm mới
+    thông qua nền tảng Google Form.
+    <br><br>
+    Hoạt động thể hiện rõ yếu tố tương tác số,
+    ứng dụng công nghệ vào giáo dục
+    và kết nối tập thể trong dịp Tết.
+  </p>
+
+  <a class="btn" 
+     href="https://forms.gle/QqVibsXuuZuHQhxh6" 
+     target="_blank">
+     🎉 GỬI ĐIỀU ƯỚC
+  </a>
+</div>
+
     </div>
   </div>
 </section>
@@ -247,6 +296,45 @@ footer{
   Website STEM Tết – Chuyển đổi số<br>
   Thực hiện bởi tập thể lớp <strong>10A7</strong> ❤️
 </footer>
+
+  <!-- HOA XUÂN RƠI -->
+<style>
+.falling-flower{
+  position:absolute;
+  top:-50px;
+  font-size:24px;
+  animation:fall linear infinite;
+  opacity:.85;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{opacity:1}
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+</style>
+
+<script>
+const flowers = ["🌸","🌼","🧧"];
+for(let i=0;i<18;i++){
+  const f=document.createElement("div");
+  f.className="falling-flower";
+  f.innerText=flowers[Math.floor(Math.random()*flowers.length)];
+  f.style.left=Math.random()*100+"vw";
+  f.style.animationDuration=8+Math.random()*6+"s";
+  f.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
